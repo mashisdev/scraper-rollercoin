@@ -20,7 +20,16 @@ This project scrapes miner data from the Rollercoin marketplace by parsing the H
 1. Google Sheets API: requires a credentials.json file for Google Sheets API access. Refer to this tutorial for setup:
    [![Automate Google Sheets With Python - Google Sheets API Tutorial](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DzCEJurLGFRk)](https://www.youtube.com/watch?v=zCEJurLGFRk)
    <br>
-2. Environment Variables: set SHEET_ID (https://docs.google.com/spreadsheets/d/SHEET_ID/edit) and WORKSHEET environment variables to specify the target Google Sheet and worksheet.
+2. Environment Variables: set SHEET_ID (`https://docs.google.com/spreadsheets/d/<SHEET_ID>/edit`) and WORKSHEET environment variables to specify the target Google Sheet and worksheet.
+   <details>
+    <summary>Example of .env file:</summary>
+     
+      ```bash
+      SHEET_ID="A9fZxM8TqYv7WbJcLh2EoRtNs3CgKVmPdXeQaUBrTwJ"
+      WORKSHEET="PythonSheet"
+      ```
+  </details>
+
 3. Dependencies: install required Python packages (gspread, beautifulsoup4, google-auth-httplib2, google-api-python-client, google-auth-oauthlib & python-dotenv) using
 `pip install -r "requirements.txt"` and run with `py main.py`
 4. HTML input: the script prompts for an HTML formatted text in the console. The user must log in to the site, navigate to the marketplace URL ([rollercoin.com/marketplace](http://rollercoin.com/marketplace)), inspect the site and search for the `marketplace-buy-items-list` element, copy and paste the HTML into the console and press enter.
